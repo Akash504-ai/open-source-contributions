@@ -234,7 +234,44 @@ Titles were generated on the first message, often resulting in generic or duplic
 **Impact**  
 - Improved quality of generated titles  
 - Reduced unnecessary LLM calls  
-- Enhanced user experience in chat workflows  
+- Enhanced user experience in chat workflows
+
+### 5. Adapter Consistency: Standardized `handlerParams.registeredTools`
+**PR:** https://github.com/mastra-ai/mastra/pull/15635  
+**Status:** Merged  
+
+**Problem**  
+Inconsistent handler parameter APIs across adapters (Fastify, Express, Hono).  
+- Fastify exposed `tools`  
+- Others used `registeredTools`  
+- Caused confusion and potential request body collisions with `tools` fields  
+
+**Solution**  
+- Standardized all adapters to use `registeredTools`  
+- Renamed Fastify’s `tools` → `registeredTools`  
+- Updated handler parameter mappings accordingly  
+
+**Impact**  
+- Unified adapter interface across the codebase  
+- Prevented naming collisions with request payloads  
+- Improved developer experience and API predictability  
+
+
+### 6. Express Adapter Regression Revert
+**PR:** https://github.com/mastra-ai/mastra/pull/15650  
+**Status:** Merged  
+
+**Problem**  
+A prior change introduced a `tools` alias in the Express adapter, diverging from the standardized `registeredTools` contract and risking inconsistency.  
+
+**Solution**  
+- Reverted the `tools` addition in Express  
+- Restored alignment with `registeredTools` across all adapters  
+
+**Impact**  
+- Maintained a single, consistent handler API  
+- Avoided ambiguity between `tools` and `registeredTools`  
+- Ensured stability after cross-adapter standardization  
 
 ## conda-forge
 
