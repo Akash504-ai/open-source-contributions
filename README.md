@@ -159,6 +159,27 @@ Rate limit error messages could display negative wait times when the reset times
 **Validation**  
 - Reviewed updated documentation files for correctness and readability
 
+### 3. Event Type URL Prefix Alignment Fix  
+**PR:** https://github.com/calcom/cal.diy/pull/29000  
+**Status:** Merged  
+
+**Problem**  
+The URL prefix (e.g. `localhost:3000/username/`) in the Event Type Setup tab appeared slightly misaligned compared to the input text due to baseline inconsistencies between elements.
+
+**Solution**  
+- Applied flexbox alignment to vertically center the prefix container  
+- Introduced a minimal 1px offset to precisely match the input text baseline  
+
+**Impact**  
+- Improved visual consistency in the Event Type setup UI  
+- Enhanced overall user experience with better alignment and polish  
+- Removed subtle UI inconsistency in a frequently used input field  
+
+**Validation**  
+- Verified alignment on `/event-types/:id?tabName=setup`  
+- Compared prefix and input text for consistent vertical positioning  
+- Confirmed no layout regressions after change  
+
 ---
 
 ## Mastra (mastra-ai)
