@@ -10,6 +10,19 @@
 
 ---
 
+## [Supabase](https://supabase.com)
+
+- Added validation requiring `replica_identity_index` when PostgreSQL `REPLICA IDENTITY` is configured as `INDEX`, preventing invalid SQL generation in `pg-meta`.  
+  PR: [#45019](https://github.com/supabase/supabase/pull/45019)
+
+- Fixed cross-schema index collisions in `pg-meta` by including schema-qualified joins for `pg_indexes`, ensuring accurate index metadata retrieval when duplicate index names exist across schemas.  
+  PR: [#45374](https://github.com/supabase/supabase/pull/45374)
+
+- Improved Supabase documentation by adding React quickstart error handling examples and standardizing Docker-related terminology across setup guides.  
+  PR: [#45320](https://github.com/supabase/supabase/pull/45320)
+
+  ---
+
 ## [Hugging Face Diffusers](https://huggingface.co/docs/diffusers/index)
 
 - Fixed profiling decorator instance leakage in LTX2 pipelines by rebinding unbound methods correctly, preserving isolation across deep-copied components and preventing shared state bugs.  
