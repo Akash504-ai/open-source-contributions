@@ -29,8 +29,8 @@
 - Fixed negative wait-time values in rate-limit error messages by clamping expired reset timestamps, improving API reliability and UX.  
   PR: [#28765](https://github.com/calcom/cal.com/pull/28765)
 
-- Improved Cal.com documentation clarity, formatting, and onboarding consistency across setup guides and environment configuration references.  
-  PR: [#28832](https://github.com/calcom/cal.com/pull/28832)
+- Improved documentation clarity, grammar, formatting, and onboarding consistency across Cal.com/Cal.diy setup guides and README references, enhancing developer experience and readability.  
+  PRs: [#28832](https://github.com/calcom/cal.com/pull/28832), [#29005](https://github.com/calcom/cal.diy/pull/29005)
 
 - Fixed Event Type URL prefix alignment issues in the setup UI, improving visual consistency and interface polish.  
   PR: [#29000](https://github.com/calcom/cal.diy/pull/29000)
