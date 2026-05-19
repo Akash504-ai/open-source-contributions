@@ -51,11 +51,20 @@
 - Introduced configurable `minMessages` support for delayed title generation, improving title quality and reducing unnecessary LLM calls.  
   PR: [#14778](https://github.com/mastra-ai/mastra/pull/14778)
 
+- Fixed multipart upload handling in the Fastify adapter by properly resuming oversized file streams, preventing hanging requests and adding multipart integration tests.  
+  PR: [#15796](https://github.com/mastra-ai/mastra/pull/15796)
+
 - Standardized adapter APIs around `registeredTools`, eliminating cross-adapter inconsistencies and preventing naming collisions with request payloads.  
   PR: [#15635](https://github.com/mastra-ai/mastra/pull/15635)
 
 - Reverted Express adapter regression to maintain consistent `registeredTools` behavior across all framework adapters.  
   PR: [#15650](https://github.com/mastra-ai/mastra/pull/15650)
+
+- Added `tools` compatibility support to the Express adapter while preserving backward compatibility with existing `registeredTools` integrations.  
+  PR: [#15632](https://github.com/mastra-ai/mastra/pull/15632)
+
+- Improved Mastra documentation consistency, formatting, grammar, CLI guidance, and Markdown/Vale setup instructions across README and contributor docs.  
+  PRs: [#15854](https://github.com/mastra-ai/mastra/pull/15854), [#15900](https://github.com/mastra-ai/mastra/pull/15900)
 
 ---
 
