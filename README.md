@@ -52,6 +52,10 @@
 
 ## [Mastra](https://mastra.ai)
 
+- Implemented MCP server instruction forwarding into Agent system prompts, enabling Agents to automatically consume server-provided guidance with configurable opt-in controls, truncation limits, deterministic ordering, and          comprehensive test coverage.
+
+  PR: [#17155](https://github.com/mastra-ai/mastra/pull/17155#event-26159981593)
+
 - Prevented indefinite e2e test hangs by adding timeout watchdogs and improved process cleanup/error handling for dev server startup flows.  
   PR: [#14955](https://github.com/mastra-ai/mastra/pull/14955)
 
