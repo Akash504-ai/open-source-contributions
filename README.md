@@ -37,6 +37,13 @@
 
 ---
 
+## Future AGI
+
+- Fixed an authentication security flaw where revoked or expired API keys could still authenticate successfully. Added active-state validation in the API key authentication flow and comprehensive regression tests covering revoked and expired key scenarios, preventing unauthorized access and future regressions.
+  PR: [#621](https://github.com/future-agi/future-agi/pull/621#event-26468550098)
+
+---
+
 ## [Cal.com](https://cal.com)
 
 - Fixed negative wait-time values in rate-limit error messages by clamping expired reset timestamps, improving API reliability and UX.  
