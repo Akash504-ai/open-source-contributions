@@ -37,7 +37,7 @@
 
 ---
 
-## Future AGI
+## [Future AGI](https://futureagi.com/)
 
 - Fixed an authentication security flaw where revoked or expired API keys could still authenticate successfully. Added active-state validation in the API key authentication flow and comprehensive regression tests covering revoked and expired key scenarios, preventing unauthorized access and future regressions.
 
