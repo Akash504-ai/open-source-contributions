@@ -88,6 +88,10 @@
 - Added `tools` compatibility support to the Express adapter while preserving backward compatibility with existing `registeredTools` integrations.  
   PR: [#15632](https://github.com/mastra-ai/mastra/pull/15632)
 
+- Added test coverage for prefill error detection in PrefillErrorHandler, validating retry behavior for recognized plain Error instances and preventing future regressions.
+
+  PR: [#18028](https://github.com/mastra-ai/mastra/pull/18028)
+
 - Improved Mastra documentation consistency, formatting, grammar, CLI guidance, and Markdown/Vale setup instructions across README and contributor docs.  
   PRs: [#15854](https://github.com/mastra-ai/mastra/pull/15854), [#15900](https://github.com/mastra-ai/mastra/pull/15900)
 
