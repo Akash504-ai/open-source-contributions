@@ -82,9 +82,6 @@
 * Standardized adapter APIs around `registeredTools`, eliminating cross-adapter inconsistencies and preventing naming collisions with request payloads.
   PR: [#15635](https://github.com/mastra-ai/mastra/pull/15635)
 
-* Reverted Express adapter regression to maintain consistent `registeredTools` behavior across all framework adapters.
-  PR: [#15650](https://github.com/mastra-ai/mastra/pull/15650)
-
 * Added `tools` compatibility support to the Express adapter while preserving backward compatibility with existing `registeredTools` integrations.
   PR: [#15632](https://github.com/mastra-ai/mastra/pull/15632)
 
