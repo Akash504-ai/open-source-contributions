@@ -60,22 +60,11 @@
 
 ## [Mastra](https://mastra.ai)
 
-* Added `listToolsWithErrors()` to MCPClient, enabling tool discovery with structured per-server error reporting while preserving backward compatibility with existing `listTools()` behavior. Included documentation and comprehensive test coverage for partial failures, retries, and duplicate tool handling.
-  PR: [#18030](https://github.com/mastra-ai/mastra/pull/18030)
-
-* Fixed semantic recall threshold handling in `Memory.recall()`, ensuring `semanticRecall.threshold` is consistently applied to vector search results and aligned with processor-based recall behavior. Added targeted regression tests covering filtering and boundary conditions.
-  PR: [#18211](https://github.com/mastra-ai/mastra/pull/18211)
-
-* Fixed OpenTelemetry export handling for `RAG_EMBEDDING` spans by mapping them to GenAI semantic conventions, exporting model/provider/usage metadata, preserving embedding-specific attributes, and enabling accurate embedding observability in tools such as Langfuse.
-  PR: [#17917](https://github.com/mastra-ai/mastra/pull/17917)
-
 * Implemented MCP server instruction forwarding into Agent system prompts, enabling Agents to automatically consume server-provided guidance with configurable opt-in controls, truncation limits, deterministic ordering, and comprehensive test coverage.
-  PR: [#17155](https://github.com/mastra-ai/mastra/pull/17155)
 
-* Added test coverage for prefill error detection in `PrefillErrorHandler`, validating retry behavior for recognized Error instances and preventing future regressions.
-  PR: [#18028](https://github.com/mastra-ai/mastra/pull/18028)
+  PR: [#17155](https://github.com/mastra-ai/mastra/pull/17155#event-26159981593)
 
-* Prevented indefinite E2E test hangs by adding timeout watchdogs and improved process cleanup/error handling for dev server startup flows.
+* Prevented indefinite e2e test hangs by adding timeout watchdogs and improved process cleanup/error handling for dev server startup flows.
   PR: [#14955](https://github.com/mastra-ai/mastra/pull/14955)
 
 * Fixed PostgreSQL `jsonb` persistence failures by sanitizing invalid JSON escape sequences before workflow snapshot storage.
@@ -90,13 +79,34 @@
 * Fixed multipart upload handling in the Fastify adapter by properly resuming oversized file streams, preventing hanging requests and adding multipart integration tests.
   PR: [#15796](https://github.com/mastra-ai/mastra/pull/15796)
 
-* Standardized adapter APIs around `registeredTools`, eliminating cross-adapter inconsistencies and preventing naming collisions with request payloads. Also restored and maintained compatibility across framework adapters.
-  PRs: [#15635](https://github.com/mastra-ai/mastra/pull/15635), [#15650](https://github.com/mastra-ai/mastra/pull/15650), [#15632](https://github.com/mastra-ai/mastra/pull/15632)
+* Standardized adapter APIs around `registeredTools`, eliminating cross-adapter inconsistencies and preventing naming collisions with request payloads.
+  PR: [#15635](https://github.com/mastra-ai/mastra/pull/15635)
 
-* Improved Mastra documentation consistency, formatting, grammar, CLI guidance, and Markdown/Vale setup instructions across README and contributor documentation.
+* Reverted Express adapter regression to maintain consistent `registeredTools` behavior across all framework adapters.
+  PR: [#15650](https://github.com/mastra-ai/mastra/pull/15650)
+
+* Added `tools` compatibility support to the Express adapter while preserving backward compatibility with existing `registeredTools` integrations.
+  PR: [#15632](https://github.com/mastra-ai/mastra/pull/15632)
+
+* Added test coverage for prefill error detection in PrefillErrorHandler, validating retry behavior for recognized plain Error instances and preventing future regressions.
+
+  PR: [#18028](https://github.com/mastra-ai/mastra/pull/18028)
+
+* Improved Mastra documentation consistency, formatting, grammar, CLI guidance, and Markdown/Vale setup instructions across README and contributor docs.
   PRs: [#15854](https://github.com/mastra-ai/mastra/pull/15854), [#15900](https://github.com/mastra-ai/mastra/pull/15900)
 
+* Fixed OpenTelemetry export handling for `RAG_EMBEDDING` spans by mapping them to GenAI semantic conventions, exporting model/provider/usage metadata, preserving embedding-specific attributes, and enabling accurate embedding observability in downstream tools such as Langfuse.
 
+  PR: [#17917](https://github.com/mastra-ai/mastra/pull/17917)
+
+* Fixed semantic recall threshold handling in `Memory.recall()`, ensuring `semanticRecall.threshold` is consistently applied to vector search results and aligned with processor-based recall behavior. Added targeted regression tests covering filtering and threshold boundary conditions.
+
+  PR: [#18211](https://github.com/mastra-ai/mastra/pull/18211)
+
+* Added `listToolsWithErrors()` to MCPClient, enabling tool discovery with structured per-server error reporting while preserving backward compatibility with existing `listTools()` behavior. Included documentation and comprehensive test coverage for partial failures, retries, reconnect handling, and duplicate tool names.
+
+  PR: [#18030](https://github.com/mastra-ai/mastra/pull/18030)
+  
 ---
 
 ## [PostHog](https://posthog.com)
