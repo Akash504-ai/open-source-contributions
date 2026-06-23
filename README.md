@@ -64,6 +64,10 @@
 
   PR: [#17155](https://github.com/mastra-ai/mastra/pull/17155#event-26159981593)
 
+* Implemented version-aware prompt persistence for editor.prompt.update(), ensuring editable prompt fields (name, description, content, rules, and requestContextSchema) correctly create and persist new prompt versions. Added conflict-retry handling for concurrent version updates, preserved publishing semantics, aligned SDK behavior with Studio/API workflows, and added comprehensive test coverage.
+
+  PR: [#17088](https://github.com/mastra-ai/mastra/pull/17088#event-27097108740)
+
 * Prevented indefinite e2e test hangs by adding timeout watchdogs and improved process cleanup/error handling for dev server startup flows.
   PR: [#14955](https://github.com/mastra-ai/mastra/pull/14955)
 
