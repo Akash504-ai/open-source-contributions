@@ -2,6 +2,10 @@
 
 ## [Strapi](https://strapi.io)
 
+- Fixed content API validation for polymorphic structures (dynamic zones and morph relations), ensuring invalid `populate` queries return proper `400 Bad Request` responses instead of `500 Internal Server Error`. Added comprehensive test coverage and collaborated with maintainers through multiple review iterations.
+  
+  PR: #25854
+
 - Fixed RBAC authorization failures in `countDraftRelations` by implementing permission-aware populate handling, restoring correct entity-level access checks and preventing incorrect 403/UI errors.  
   PR: [#25977](https://github.com/strapi/strapi/pull/25977)
 
