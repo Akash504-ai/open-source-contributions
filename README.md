@@ -12,6 +12,9 @@
 - Fixed OpenAPI route generation for plugins by correctly handling `router.prefix` and route-level prefixes, ensuring accurate API documentation paths.  
   PR: [#25616](https://github.com/strapi/strapi/pull/25616)
 
+- Fixed runtime validation for string (Short Text) fields by enforcing a default maxLength of 255, preventing PostgreSQL VARCHAR(255) overflow errors from surfacing as 500 Internal Server Errors. Added regression tests to ensure invalid inputs return field-specific 400 Bad Request validation errors before reaching the database.
+PR: [#26128](https://github.com/strapi/strapi/pull/26128#event-28010489977)
+
 ---
 
 ## [Supabase](https://supabase.com)
