@@ -114,6 +114,10 @@ PR: [#26128](https://github.com/strapi/strapi/pull/26128#event-28010489977)
 * Added `listToolsWithErrors()` to MCPClient, enabling tool discovery with structured per-server error reporting while preserving backward compatibility with existing `listTools()` behavior. Included documentation and comprehensive test coverage for partial failures, retries, reconnect handling, and duplicate tool names.
 
   PR: [#18030](https://github.com/mastra-ai/mastra/pull/18030)
+
+ * Fixed `streamLegacy()` cleanup to guarantee writer lock release even when an observer cleanup handler rejects. Reworked observer cleanup with `Promise.allSettled()`, ensured `writer.close()` is still attempted, and added regression coverage for rejected observer cancellation handlers.
+
+   PR: [#20652](https://github.com/mastra-ai/mastra/pull/20652)
   
 ---
 
