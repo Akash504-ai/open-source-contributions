@@ -75,6 +75,10 @@ PR: [#26128](https://github.com/strapi/strapi/pull/26128#event-28010489977)
 
   PR: [#17088](https://github.com/mastra-ai/mastra/pull/17088#event-27097108740)
 
+* Fixed Anthropic signed thinking replay by preserving valid reasoning content and sanitizing legacy persisted thinking blocks with signatures but missing text, preventing `thinking blocks cannot be modified` errors during multi-turn memory replay. Added comprehensive regression coverage for message persistence, replay, provider-history compatibility, and non-Anthropic metadata.
+
+  PR: [#17602](https://github.com/mastra-ai/mastra/pull/17602)
+
 * Prevented indefinite e2e test hangs by adding timeout watchdogs and improved process cleanup/error handling for dev server startup flows.
   PR: [#14955](https://github.com/mastra-ai/mastra/pull/14955)
 
